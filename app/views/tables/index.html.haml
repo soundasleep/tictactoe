@@ -1,0 +1,11 @@
+%h1 Join an empty table
+
+%ul
+  - available_tables.each do |table|
+    %li
+      = @table
+  %li
+    = occupied_tables.count
+    tables already occupied
+  %li
+    = link_to "Create a table", new_table_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529023203) do
+ActiveRecord::Schema.define(version: 20150529032409) do
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20150529023203) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
+  create_table "tables", force: :cascade do |t|
+    t.integer  "created_by_id"
+    t.integer  "opponent_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.boolean  "closed"
+  end
+
+  add_index "tables", ["created_by_id"], name: "index_tables_on_created_by_id"
+  add_index "tables", ["opponent_id"], name: "index_tables_on_opponent_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"

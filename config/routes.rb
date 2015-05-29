@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  resources :tables, only: [ :index, :show, :new ]
+
   get "/auth/google_login/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 end
