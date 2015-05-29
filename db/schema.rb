@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529032409) do
+ActiveRecord::Schema.define(version: 20150529033008) do
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150529032409) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.boolean  "closed"
+    t.string   "name"
   end
 
   add_index "tables", ["created_by_id"], name: "index_tables_on_created_by_id"

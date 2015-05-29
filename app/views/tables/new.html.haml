@@ -1,0 +1,13 @@
+%h1 Create a new table
+
+= form_for @table do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :created_by
+    = @table.created_by.name
+
+  %p
+    = f.submit

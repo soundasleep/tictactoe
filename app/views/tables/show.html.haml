@@ -1,0 +1,12 @@
+%h1 Table "#{@table.name}"
+
+%p
+  Created by
+  = @table.created_by.name
+
+%p
+  Opponent
+  - if @table.opponent
+    = @table.opponent.name
+  - else
+    %i none yet...
