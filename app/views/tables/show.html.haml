@@ -10,3 +10,12 @@
     = @table.opponent.name
   - else
     %i none yet...
+
+%p
+  - if @table.created_by == current_user!
+    - if @table.ready?
+      = link_to "Start game!", game_create_path
+    - else
+      Waiting for player...
+  - else
+    Waiting for host to start game...
